@@ -22,7 +22,7 @@ const ImgStyling = {
 
 function Header() {
  return (
-   <div style={HeaderStyling}>
+   <div style={HeaderStyling} data-testid={"HeaderTest"}>
    <h1>React Webpage</h1>
   </div>
  );
@@ -30,7 +30,7 @@ function Header() {
 
  function Body() {
     return (
-        <div style={pStyling}>
+        <div style={pStyling} data-testid={"BodyTest"}>
             <p>This is a webpage made with the use of React</p>
         </div>
     )
@@ -82,7 +82,7 @@ function Header() {
     } else {
         return(
         <div id="dogDiv">
-            <img id="dogImg" src={dogs} />
+            <img id="dogImg" src={dogs} alt="Doggo" />
         </div>)
     }
  }
@@ -98,11 +98,8 @@ function Header() {
     )
  }
 
+ export default App;
 
 // ========================================
 const root = ReactDOM.createRoot(document.getElementById("root"));
-try {
-    root.render(<App />);
-} catch (error) {
-    console.log("FAILED TO RENDER THE COMPONENTS")
-}
+root.render(<App />);
